@@ -9,10 +9,20 @@
 			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
+		<key>BioInformaticsTests.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
 		<key>5D8BB6711D60C0AA002C18F6</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>5D8BB67F1D60C103002C18F6</key>
 		<dict>
 			<key>primary</key>
 			<true/>

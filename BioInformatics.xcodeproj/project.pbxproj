@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		5D8BB6761D60C0AA002C18F6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D8BB6751D60C0AA002C18F6 /* main.m */; };
+		5D8BB6831D60C103002C18F6 /* BioInformaticsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D8BB6821D60C103002C18F6 /* BioInformaticsTests.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,10 +26,20 @@
 /* Begin PBXFileReference section */
 		5D8BB6721D60C0AA002C18F6 /* BioInformatics */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = BioInformatics; sourceTree = BUILT_PRODUCTS_DIR; };
 		5D8BB6751D60C0AA002C18F6 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		5D8BB6801D60C103002C18F6 /* BioInformaticsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BioInformaticsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		5D8BB6821D60C103002C18F6 /* BioInformaticsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BioInformaticsTests.m; sourceTree = "<group>"; };
+		5D8BB6841D60C103002C18F6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		5D8BB66F1D60C0AA002C18F6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5D8BB67D1D60C103002C18F6 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -42,6 +53,7 @@
 			isa = PBXGroup;
 			children = (
 				5D8BB6741D60C0AA002C18F6 /* BioInformatics */,
+				5D8BB6811D60C103002C18F6 /* BioInformaticsTests */,
 				5D8BB6731D60C0AA002C18F6 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -50,6 +62,7 @@
 			isa = PBXGroup;
 			children = (
 				5D8BB6721D60C0AA002C18F6 /* BioInformatics */,
+				5D8BB6801D60C103002C18F6 /* BioInformaticsTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -60,6 +73,15 @@
 				5D8BB6751D60C0AA002C18F6 /* main.m */,
 			);
 			path = BioInformatics;
+			sourceTree = "<group>";
+		};
+		5D8BB6811D60C103002C18F6 /* BioInformaticsTests */ = {
+			isa = PBXGroup;
+			children = (
+				5D8BB6821D60C103002C18F6 /* BioInformaticsTests.m */,
+				5D8BB6841D60C103002C18F6 /* Info.plist */,
+			);
+			path = BioInformaticsTests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -82,6 +104,23 @@
 			productReference = 5D8BB6721D60C0AA002C18F6 /* BioInformatics */;
 			productType = "com.apple.product-type.tool";
 		};
+		5D8BB67F1D60C103002C18F6 /* BioInformaticsTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5D8BB6871D60C103002C18F6 /* Build configuration list for PBXNativeTarget "BioInformaticsTests" */;
+			buildPhases = (
+				5D8BB67C1D60C103002C18F6 /* Sources */,
+				5D8BB67D1D60C103002C18F6 /* Frameworks */,
+				5D8BB67E1D60C103002C18F6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = BioInformaticsTests;
+			productName = BioInformaticsTests;
+			productReference = 5D8BB6801D60C103002C18F6 /* BioInformaticsTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -92,6 +131,9 @@
 				ORGANIZATIONNAME = "EJ Mablekos";
 				TargetAttributes = {
 					5D8BB6711D60C0AA002C18F6 = {
+						CreatedOnToolsVersion = 7.3.1;
+					};
+					5D8BB67F1D60C103002C18F6 = {
 						CreatedOnToolsVersion = 7.3.1;
 					};
 				};
@@ -109,9 +151,20 @@
 			projectRoot = "";
 			targets = (
 				5D8BB6711D60C0AA002C18F6 /* BioInformatics */,
+				5D8BB67F1D60C103002C18F6 /* BioInformaticsTests */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		5D8BB67E1D60C103002C18F6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		5D8BB66E1D60C0AA002C18F6 /* Sources */ = {
@@ -119,6 +172,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				5D8BB6761D60C0AA002C18F6 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5D8BB67C1D60C103002C18F6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5D8BB6831D60C103002C18F6 /* BioInformaticsTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -220,6 +281,28 @@
 			};
 			name = Release;
 		};
+		5D8BB6851D60C103002C18F6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = BioInformaticsTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.emablekos.BioInformaticsTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		5D8BB6861D60C103002C18F6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = BioInformaticsTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.emablekos.BioInformaticsTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -237,6 +320,15 @@
 			buildConfigurations = (
 				5D8BB67A1D60C0AA002C18F6 /* Debug */,
 				5D8BB67B1D60C0AA002C18F6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5D8BB6871D60C103002C18F6 /* Build configuration list for PBXNativeTarget "BioInformaticsTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5D8BB6851D60C103002C18F6 /* Debug */,
+				5D8BB6861D60C103002C18F6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};
