@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		5D8BB6761D60C0AA002C18F6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D8BB6751D60C0AA002C18F6 /* main.m */; };
 		5D8BB6831D60C103002C18F6 /* BioInformaticsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D8BB6821D60C103002C18F6 /* BioInformaticsTests.m */; };
+		5D8BB6931D60C290002C18F6 /* BioUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D8BB6911D60C290002C18F6 /* BioUtil.m */; };
+		5D8BB6951D60C2AD002C18F6 /* BioUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D8BB6911D60C290002C18F6 /* BioUtil.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -29,6 +31,10 @@
 		5D8BB6801D60C103002C18F6 /* BioInformaticsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BioInformaticsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5D8BB6821D60C103002C18F6 /* BioInformaticsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BioInformaticsTests.m; sourceTree = "<group>"; };
 		5D8BB6841D60C103002C18F6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5D8BB6881D60C25C002C18F6 /* TestConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestConfig.h; sourceTree = "<group>"; };
+		5D8BB6911D60C290002C18F6 /* BioUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BioUtil.m; sourceTree = "<group>"; };
+		5D8BB6921D60C290002C18F6 /* BioUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BioUtil.h; sourceTree = "<group>"; };
+		5D8BB6941D60C2A7002C18F6 /* input */ = {isa = PBXFileReference; lastKnownFileType = folder; path = input; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +76,9 @@
 		5D8BB6741D60C0AA002C18F6 /* BioInformatics */ = {
 			isa = PBXGroup;
 			children = (
+				5D8BB6941D60C2A7002C18F6 /* input */,
+				5D8BB6911D60C290002C18F6 /* BioUtil.m */,
+				5D8BB6921D60C290002C18F6 /* BioUtil.h */,
 				5D8BB6751D60C0AA002C18F6 /* main.m */,
 			);
 			path = BioInformatics;
@@ -78,6 +87,7 @@
 		5D8BB6811D60C103002C18F6 /* BioInformaticsTests */ = {
 			isa = PBXGroup;
 			children = (
+				5D8BB6881D60C25C002C18F6 /* TestConfig.h */,
 				5D8BB6821D60C103002C18F6 /* BioInformaticsTests.m */,
 				5D8BB6841D60C103002C18F6 /* Info.plist */,
 			);
@@ -171,6 +181,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5D8BB6931D60C290002C18F6 /* BioUtil.m in Sources */,
 				5D8BB6761D60C0AA002C18F6 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -179,6 +190,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5D8BB6951D60C2AD002C18F6 /* BioUtil.m in Sources */,
 				5D8BB6831D60C103002C18F6 /* BioInformaticsTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -331,6 +343,7 @@
 				5D8BB6861D60C103002C18F6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
