@@ -72,12 +72,15 @@
 }
 
 + (NSString *)medianString:(NSArray *)dna k:(unsigned int)k {
+    return [[self medianStrings:dna k:k] firstObject];
+}
+
++ (NSArray *)medianStrings:(NSArray *)dna k:(unsigned int)k {
 
     int kpow = pow(4, k);
 
     unsigned long mdist = dna.count * (k + 1);
-    NSString *mpat = nil;
-
+    NSMutableArray *mpats = [NSMutableArray array];
 
     for (unsigned long i = 0; i < kpow; ++i) {
         NSString *pat = [BioUtil numberToPattern:i k:k];
@@ -85,12 +88,17 @@
         unsigned long dist = [self distanceBetweenPattern:pat strings:dna];
         if (dist < mdist) {
             mdist = dist;
-            mpat = pat;
+            [mpats removeAllObjects];
+            [mpats addObject:pat];
+        } else if (dist == mdist) {
+            [mpats addObject:pat];
         }
     }
-
-    return mpat;
+    
+    return mpats;
 }
+
+
 
 + (NSString *)mostProbableKmer:(NSString *)dna profile:(ProbabilityProfile *)profile k:(unsigned int)k {
 

@@ -15,5 +15,6 @@
 + (NSString *)medianString:(NSArray *)dna k:(unsigned int)k;
 + (NSString *)mostProbableKmer:(NSString *)dna profile:(ProbabilityProfile *)profile k:(unsigned int)k;
 + (NSArray *)greedyMotifSearch:(NSArray *)dna k:(unsigned int)k t:(unsigned int)t pseudocounts:(BOOL)pseudocounts;
++ (NSArray *)medianStrings:(NSArray *)dna k:(unsigned int)k;
 
 @end
