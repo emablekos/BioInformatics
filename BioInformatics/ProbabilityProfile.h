@@ -18,4 +18,5 @@
 - (CGFloat)probabilityOfKmer:(NSString *)kmer;
 - (NSString *)consensusString;
 - (unsigned int)scoreMotifs:(NSArray *)arr;
+- (NSString *)randomWeightedKmer:(NSString *)dna;
 @end

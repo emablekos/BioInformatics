@@ -20,6 +20,8 @@
 		5D8BB69B1D68B987002C18F6 /* Motif.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D8BB6991D68AFE2002C18F6 /* Motif.m */; };
 		5DAB7DD71D69E0EC00B703E4 /* NSArray+CHCollectionUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D49C5431D68EEDA001313B6 /* NSArray+CHCollectionUtils.m */; };
 		5DAB7DD81D69E0F000B703E4 /* NSArray+CHSafeAccess.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D49C5451D68EEDA001313B6 /* NSArray+CHSafeAccess.m */; };
+		5DAD2D211D6E1F1300A6CD9C /* Week4Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DAD2D201D6E1F1300A6CD9C /* Week4Tests.m */; };
+		5DAD2D231D6E60C900A6CD9C /* ProbabilityProfileTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DAD2D221D6E60C900A6CD9C /* ProbabilityProfileTests.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -53,6 +55,8 @@
 		5D8BB6961D68AFBD002C18F6 /* Week3Tests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Week3Tests.m; sourceTree = "<group>"; };
 		5D8BB6981D68AFE2002C18F6 /* Motif.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Motif.h; sourceTree = "<group>"; };
 		5D8BB6991D68AFE2002C18F6 /* Motif.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Motif.m; sourceTree = "<group>"; };
+		5DAD2D201D6E1F1300A6CD9C /* Week4Tests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Week4Tests.m; sourceTree = "<group>"; };
+		5DAD2D221D6E60C900A6CD9C /* ProbabilityProfileTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProbabilityProfileTests.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +121,8 @@
 				5D8BB6881D60C25C002C18F6 /* TestConfig.h */,
 				5D8BB6821D60C103002C18F6 /* Week2Tests.m */,
 				5D8BB6961D68AFBD002C18F6 /* Week3Tests.m */,
+				5DAD2D201D6E1F1300A6CD9C /* Week4Tests.m */,
+				5DAD2D221D6E60C900A6CD9C /* ProbabilityProfileTests.m */,
 			);
 			path = BioInformaticsTests;
 			sourceTree = "<group>";
@@ -223,10 +229,12 @@
 			files = (
 				5D8BB6971D68AFBD002C18F6 /* Week3Tests.m in Sources */,
 				5DAB7DD71D69E0EC00B703E4 /* NSArray+CHCollectionUtils.m in Sources */,
+				5DAD2D211D6E1F1300A6CD9C /* Week4Tests.m in Sources */,
 				5D8BB69B1D68B987002C18F6 /* Motif.m in Sources */,
 				5D8BB6951D60C2AD002C18F6 /* BioUtil.m in Sources */,
 				5D49C5411D68E36A001313B6 /* ProbabilityProfile.m in Sources */,
 				5DAB7DD81D69E0F000B703E4 /* NSArray+CHSafeAccess.m in Sources */,
+				5DAD2D231D6E60C900A6CD9C /* ProbabilityProfileTests.m in Sources */,
 				5D8BB6831D60C103002C18F6 /* Week2Tests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

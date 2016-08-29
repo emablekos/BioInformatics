@@ -171,9 +171,16 @@
 
     NSAssert(kmer.length == [self k], @"Wrong size");
 
+    return [self probabilityOfKmer:kmer index:0];
+}
+
+- (CGFloat)probabilityOfKmer:(NSString *)kmer index:(unsigned long)index {
+
+    NSAssert(index + kmer.length <= [self k], @"Wrong size");
+
     CGFloat val = 1.;
 
-    for (unsigned long long i = 0; i < kmer.length; ++i) {
+    for (unsigned long long i = index; i < kmer.length; ++i) {
         CGFloat v = [self valueForChar:[kmer characterAtIndex:i] index:i];
         val *= v;
     }
@@ -198,6 +205,38 @@
     return YES;
 }
 
+- (NSString *)randomWeightedKmer:(NSString *)dna {
+
+    NSMutableArray *ps = [NSMutableArray array];
+
+    // Create array of all probabilities
+    CGFloat sum = 0.f;
+    for (unsigned long i = 0; i <= dna.length - self.k; ++i) {
+        NSString *kmer = [dna substringWithRange:NSMakeRange(i, self.k)];
+        CGFloat p = [self probabilityOfKmer:kmer];
+        sum += p;
+        [ps addObject:@(p)];
+    }
+
+    unsigned long pos = arc4random_uniform((u_int32_t)(dna.length - self.k)); //Init to fully random number
+
+    CGFloat r = ((double)arc4random()/0x100000000) * sum; //Roll dice
+
+    // Loop over probabilities, if our diceroll is under the current probability, choose it
+    CGFloat thresh = 0;
+    for (unsigned long i = 0; i < ps.count; ++i) {
+        thresh += [ps[i] floatValue];
+        if (r < thresh) {
+            pos = i;
+            break;
+        }
+    }
+
+    return [dna substringWithRange:NSMakeRange(pos, self.k)];
+}
+
+
+
 #pragma mark - NSObject
 
 - (BOOL)isEqual:(id)object {
@@ -210,6 +249,11 @@
     }
 
     return [self isEqualToProbabilityProfile:(ProbabilityProfile *)object];
+}
+
+- (NSString *)description {
+
+    return [[super description] stringByAppendingFormat:@"\n%@\n%@\n%@\n%@", [self.a[0] componentsJoinedByString:@"\t"], [self.a[1] componentsJoinedByString:@"\t"], [self.a[2] componentsJoinedByString:@"\t"], [self.a[3] componentsJoinedByString:@"\t"]];
 }
 
 

@@ -151,61 +151,7 @@ TGGTGCTAGACCGTGATCTTCTGGTGGAATTAACCAAAACAT"\
 
 }
 
-- (void)testProbabilityProfile {
 
-    NSArray *lines =
-    @[@"0.2 0.2 0.3 0.2 0.3",
-      @"0.4 0.3 0.1 0.5 0.1",
-      @"0.3 0.3 0.5 0.2 0.4",
-      @"0.1 0.2 0.1 0.1 0.2",
-      ];
-
-    ProbabilityProfile *pp = [[ProbabilityProfile alloc] initWithLines:lines];
-
-    XCTAssertEqualWithAccuracy([pp valueFor:@"A" index:1], .2, .01);
-    XCTAssertEqualWithAccuracy([pp valueFor:@"C" index:3], .5, .01);
-    XCTAssertEqualWithAccuracy([pp valueFor:@"T" index:4], .2, .01);
-
-    CGFloat v = [pp probabilityOfKmer:@"ACGTT"];
-    XCTAssertEqualWithAccuracy(v, .2f*.3f*.5f*.1f*.2f , .01);
-
-
-    NSArray *motifs =
-    @[
-      @"ACAAA",
-      @"ACAAC",
-      @"ACATG",
-      @"ACATT",
-      ];
-    ProbabilityProfile *pp2 = [[ProbabilityProfile alloc] initWithMotifs:motifs];
-
-    lines =
-    @[@"1.0 0.0 1.0 0.5 0.25",
-      @"0.0 1.0 0.0 0.0 0.25",
-      @"0.0 0.0 0.0 0.0 0.25",
-      @"0.0 0.0 0.0 0.5 0.25",
-      ];
-    ProbabilityProfile *pp3 = [[ProbabilityProfile alloc] initWithLines:lines];
-    XCTAssertEqualObjects(pp2, pp3);
-
-    motifs =
-    @[
-      @"TCGGGGGTTTTT",
-      @"CCGGTGACTTAC",
-      @"ACGGGGATTTTC",
-      @"TTGGGGACTTTT",
-      @"AAGGGGACTTCC",
-      @"TTGGGGACTTCC",
-      @"TCGGGGATTCAT",
-      @"TCGGGGATTCCT",
-      @"TAGGGGAACTAC",
-      @"TCGGGTATAACC"
-      ];
-    ProbabilityProfile *pp4 = [[ProbabilityProfile alloc] initWithMotifs:motifs];
-    XCTAssertEqualObjects([pp4 consensusString], @"TCGGGGATTTCC");
-    XCTAssertEqual([pp4 scoreMotifs:motifs], 30);
-
-}
 
 - (void)testMostProbableKmer {
 
