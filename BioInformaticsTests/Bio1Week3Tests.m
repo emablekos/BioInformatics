@@ -12,11 +12,11 @@
 #import "Motif.h"
 #import "ProbabilityProfile.h"
 
-@interface Week3Tests : XCTestCase
+@interface Bio1Week3Tests : XCTestCase
 
 @end
 
-@implementation Week3Tests
+@implementation Bio1Week3Tests
 
 - (void)setUp {
     [super setUp];

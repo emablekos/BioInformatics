@@ -13,11 +13,11 @@
 #import "ProbabilityProfile.h"
 
 
-@interface Week4Tests : XCTestCase
+@interface Bio1Week4Tests : XCTestCase
 
 @end
 
-@implementation Week4Tests
+@implementation Bio1Week4Tests
 
 - (void)setUp {
     [super setUp];

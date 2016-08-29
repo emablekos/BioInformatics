@@ -10,11 +10,11 @@
 #import "BioUtil.h"
 #import "TestConfig.h"
 
-@interface Week2Tests : XCTestCase
+@interface Bio1Week2Tests : XCTestCase
 
 @end
 
-@implementation Week2Tests
+@implementation Bio1Week2Tests
 
 
 - (void)setUp {

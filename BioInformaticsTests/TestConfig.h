@@ -9,7 +9,7 @@
 #ifndef TestConfig_h
 #define TestConfig_h
 
-static NSString *const PROJECT_PATH = @"/Users/emablekos/Projects/BioInformatics/BioInformatics/BioInformatics/input/";
+static NSString *const PROJECT_PATH = @"/Users/emablekos/Projects/BioInformatics/BioInformatics/BioInformaticsTests/input/";
 
 
 #endif /* TestConfig_h */

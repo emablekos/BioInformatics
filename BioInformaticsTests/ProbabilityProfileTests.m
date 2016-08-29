@@ -109,7 +109,7 @@
       @"0.5 0.5 0.5 0.5 0.5 0.5",
       ];
 
-    //pp = [[ProbabilityProfile alloc] initWithLines:lines];
+    pp = [[ProbabilityProfile alloc] initWithLines:lines];
 
     test = [pp randomWeightedKmer:@"AAAAAACCCCCCCCCCCCCCCCCCTTTTTT"];
     XCTAssert([test isEqualToString:@"AAAAAA"] || [test isEqualToString:@"TTTTTT"]);
