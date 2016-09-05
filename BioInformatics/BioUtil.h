@@ -24,5 +24,7 @@
 + (NSArray *)neighbors:(NSString *)pattern distance:(int)distance;
 + (NSArray *)frequentWordsWithMismatches:(NSString *)text k:(int)k d:(int)d;
 + (NSArray *)frequentWordsWithMismatches:(NSString *)text k:(int)k d:(int)d reverse:(BOOL)reverse;
++ (NSArray *)kmersFromString:(NSString *)str k:(NSUInteger)k;
++ (NSString *)stringFromSequentialKmers:(NSArray *)strings;
 
 @end

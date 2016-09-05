@@ -372,5 +372,28 @@
     return [result copy];
 }
 
++ (NSArray *)kmersFromString:(NSString *)str k:(NSUInteger)k {
+    NSMutableArray *arr = [NSMutableArray arrayWithCapacity:str.length - k];
+
+    for (int i = 0; i <= str.length - k; ++i) {
+        NSString *s = [str substringWithRange:NSMakeRange(i, k)];
+        [arr addObject:s];
+    }
+    return [arr copy];
+}
+
++ (NSString *)stringFromSequentialKmers:(NSArray *)strings {
+
+    NSMutableString *res = [[strings firstObject] mutableCopy];
+
+    for (long i = 1; i < strings.count; ++i) {
+        NSString *str = [strings objectAtIndex:i];
+        NSRange r = NSMakeRange(res.length-str.length+1, str.length-1);
+        [res replaceCharactersInRange:r withString:str];
+    }
+
+    return [res copy];
+}
+
 
 @end
