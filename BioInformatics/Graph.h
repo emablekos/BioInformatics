@@ -18,6 +18,14 @@
 @property (nonatomic) NSString *label;
 @end
 
+@interface GraphPath : NSObject
+- (instancetype)initWithString:(NSString *)string;
+- (BOOL)isCycle;
+- (void)follow:(GraphEdge *)edge to:(GraphNode *)node;
+- (NSEnumerator *)edgeEnumerator;
+- (NSEnumerator *)nodeEnumerator;
+@end
+
 @interface Graph : NSObject
 
 - (instancetype)initWithAdjacencyList:(NSString *)list;
@@ -34,3 +42,11 @@
 - (NSArray *)hamiltonianPaths:(GraphNode *)from;
 
 @end
+
+
+@interface EulerPathfinder : NSObject
+- (instancetype)initWithGraph:(Graph *)graph node:(GraphNode *)node;
+- (GraphPath *)find;
+@end
+
+

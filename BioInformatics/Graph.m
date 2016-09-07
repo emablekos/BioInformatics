@@ -35,6 +35,85 @@
 
 @implementation GraphEdge
 
+- (NSString *)description {
+    return [[super description] stringByAppendingFormat:@" %@->%@", self.from.label, self.to.label];
+}
+
+@end
+
+
+@interface GraphPath()
+@property (nonatomic) NSMutableArray *nodes;
+@property (nonatomic) NSMutableArray *edges;
+@end
+
+@implementation GraphPath
+
+- (instancetype)init {
+    self = [super init];
+    if (self) {
+        self.nodes = [NSMutableArray array];
+        self.edges = [NSMutableArray array];
+    }
+    return self;
+}
+
+- (instancetype)initWithString:(NSString *)string {
+    self = [self init];
+    if (self) {
+        NSArray *arr = [string componentsSeparatedByString:@"->"];
+        for (NSString *str in arr) {
+
+            GraphNode *n = [[GraphNode alloc] init];
+            n.label = str;
+
+            if ([self.nodes lastObject]) {
+                GraphEdge *e = [[GraphEdge alloc] init];
+                e.from = [self.nodes lastObject];
+                e.to = n;
+                [self.edges addObject:e];
+            }
+
+            [self.nodes addObject:n];
+        }
+    }
+    return self;
+}
+
+- (void)startAt:(GraphNode *)node {
+    [self.nodes removeAllObjects];
+    [self.edges removeAllObjects];
+    [self.nodes addObject:node];
+}
+
+- (void)follow:(GraphEdge *)edge to:(GraphNode *)node {
+    [self.nodes addObject:node];
+    [self.edges addObject:edge];
+}
+
+- (BOOL)isCycle {
+    return self.nodes.firstObject == self.nodes.lastObject && self.nodes.count > 1;
+}
+
+- (NSEnumerator *)edgeEnumerator {
+    return self.edges.objectEnumerator;
+}
+
+- (NSEnumerator *)nodeEnumerator {
+    return self.nodes.objectEnumerator;
+}
+
+- (NSString *)description {
+    NSMutableString *str = [NSMutableString string];
+    for (GraphNode *n in self.nodes) {
+        if (str.length > 0) {
+            [str appendString:@"->"];
+        }
+        [str appendString:[n label]];
+    }
+    return [[super description] stringByAppendingFormat:@" %@", str];
+}
+
 @end
 
 
@@ -75,6 +154,9 @@
 
             for (NSString *e in [edges objectAtIndex:i]) {
                 GraphNode *n2 = [[self nodesForLabel:e] firstObject];
+                if (!n2) {
+                    n2 = [self addNodeForLabel:e];
+                }
                 [self addEdge:n1 to:n2];
             }
         }
@@ -136,6 +218,10 @@
     return [self.nodes objectEnumerator];
 }
 
+- (NSEnumerator *)edgeEnumerator {
+    return [[[self.edges allValues] CH_flatten] objectEnumerator];
+}
+
 - (BOOL)node:(GraphNode *)from isAdjacent:(GraphNode *)to {
     NSArray *es = [self edgesFrom:from];
     NSArray *ns = [es CH_map:^id(GraphEdge * obj) {
@@ -143,6 +229,21 @@
     }];
     return [ns containsObject:to];
 }
+
+- (BOOL)isBalanced {
+    for (GraphNode *node in self.nodes) {
+        NSArray *f = [self edgesFrom:node];
+        NSArray *t = [self edgesTo:node];
+
+        if (f.count != t.count) {
+            return NO;
+        }
+    }
+
+    return YES;
+}
+
+
 
 - (NSString *)description {
 
@@ -246,6 +347,96 @@
     }
 
     return nil;
+}
+
+
+@end
+
+
+
+@interface EulerPathfinder()
+@property (nonatomic) Graph *graph;
+@property (nonatomic) GraphNode *start;
+@end
+
+@implementation EulerPathfinder
+
+
+- (instancetype)initWithGraph:(Graph *)graph node:(GraphNode *)node {
+    self = [super init];
+    if (self) {
+        self.start = node;
+        self.graph = graph;
+    }
+    return self;
+}
+
+- (GraphPath *)find {
+    if (![self.graph isBalanced]) {
+
+    }
+
+    return [self extendCycle:[GraphPath new] from:self.start];
+}
+
+- (GraphPath *)extendCycle:(GraphPath *)oldPath from:(GraphNode *)start {
+
+    GraphPath *path = [GraphPath new];
+    [path startAt:start];
+
+    // Follow old path
+    NSUInteger i = [oldPath.nodes indexOfObject:start];
+    while (path.nodes.count < oldPath.nodes.count) {
+        GraphEdge *edge = [oldPath.edges objectAtIndex:i];
+        [path follow:edge to:edge.to];
+
+        i++;
+        if (i >= oldPath.edges.count) {
+            i = 0;
+        }
+    }
+
+    // Randomly walk
+    [self buildPath:path];
+
+    if (path.edges.count >= [[self.graph edgeEnumerator] allObjects].count) {
+        return path;
+    }
+
+    GraphNode *hasOptions = nil;
+    for (GraphNode *n in path.nodes) {
+        if (n == path.nodes.firstObject) {
+            continue;
+        }
+        NSArray *edges = [self.graph edgesFrom:n];
+        for (GraphEdge *e in edges) {
+            if (![path.edges containsObject:e]) {
+                hasOptions = n;
+                break;
+            }
+        }
+        if (hasOptions)
+            break;
+    }
+
+    if (!hasOptions) {
+        return nil;
+    }
+
+    return [self extendCycle:path from:hasOptions];
+}
+
+- (void)buildPath:(GraphPath *)path {
+
+    NSArray *adj = [self.graph edgesFrom:[path.nodes lastObject]];
+
+    for (GraphEdge *e in adj) {
+
+        if (![path.edges containsObject:e]) {
+            [path follow:e to:e.to];
+            return [self buildPath:path];
+        }
+    }
 }
 
 

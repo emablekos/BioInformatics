@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5D33C42E1D7FA90800C403FD /* Bio2Week2Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D33C42D1D7FA90800C403FD /* Bio2Week2Tests.m */; };
 		5D49C5401D68E025001313B6 /* ProbabilityProfile.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D49C53F1D68E025001313B6 /* ProbabilityProfile.m */; };
 		5D49C5411D68E36A001313B6 /* ProbabilityProfile.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D49C53F1D68E025001313B6 /* ProbabilityProfile.m */; };
 		5D49C5461D68EEDA001313B6 /* NSArray+CHCollectionUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D49C5431D68EEDA001313B6 /* NSArray+CHCollectionUtils.m */; };
@@ -44,6 +45,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		5D33C42D1D7FA90800C403FD /* Bio2Week2Tests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Bio2Week2Tests.m; sourceTree = "<group>"; };
 		5D49C53E1D68E025001313B6 /* ProbabilityProfile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProbabilityProfile.h; sourceTree = "<group>"; };
 		5D49C53F1D68E025001313B6 /* ProbabilityProfile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProbabilityProfile.m; sourceTree = "<group>"; };
 		5D49C5421D68EEDA001313B6 /* NSArray+CHCollectionUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+CHCollectionUtils.h"; sourceTree = "<group>"; };
@@ -142,6 +144,7 @@
 				5DAD2D221D6E60C900A6CD9C /* ProbabilityProfileTests.m */,
 				5DAD2D261D74FDDF00A6CD9C /* Bio2Week1Tests.m */,
 				5DAD2D2D1D75CD9800A6CD9C /* GraphTests.m */,
+				5D33C42D1D7FA90800C403FD /* Bio2Week2Tests.m */,
 			);
 			path = BioInformaticsTests;
 			sourceTree = "<group>";
@@ -249,6 +252,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5D33C42E1D7FA90800C403FD /* Bio2Week2Tests.m in Sources */,
 				5DAD2D2F1D75CFFB00A6CD9C /* Graph.m in Sources */,
 				5D8BB6971D68AFBD002C18F6 /* Bio1Week3Tests.m in Sources */,
 				5DAB7DD71D69E0EC00B703E4 /* NSArray+CHCollectionUtils.m in Sources */,
