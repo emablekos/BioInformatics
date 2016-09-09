@@ -407,21 +407,29 @@
     }];
 
 
-    NSMutableString *res = [NSMutableString string];
-
+    NSMutableString *pre = [NSMutableString string];
     for (NSUInteger i = 0; i < s1.count-1; ++i) {
         NSString *str = [s1 objectAtIndex:i];
-        [res appendString:[str substringToIndex:1]];
+        [pre appendString:[str substringToIndex:1]];
     }
-    [res appendString:s1.lastObject];
+    [pre appendString:s1.lastObject];
 
-    for (NSUInteger i = strings.count-d-1; i < s2.count-1; ++i) {
+
+    NSMutableString *suf = [NSMutableString string];
+    for (NSUInteger i = 0; i < s2.count-1; ++i) {
         NSString *str = [s2 objectAtIndex:i];
-        [res appendString:[str substringToIndex:1]];
+        [suf appendString:[str substringToIndex:1]];
     }
-    [res appendString:s2.lastObject];
+    [suf appendString:s2.lastObject];
 
-    return res.copy;
+
+    if ([[pre substringFromIndex:k+d] isEqualToString:[suf substringToIndex:suf.length-(k+d)]]) {
+
+        [pre appendString:[suf substringFromIndex:suf.length-(k+d)]];
+        return pre;
+    }
+
+    return nil;
 }
 
 + (NSArray *)binaryDigitsUpTo:(NSUInteger)bits {

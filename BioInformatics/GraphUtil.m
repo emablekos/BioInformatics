@@ -114,12 +114,14 @@
 
     NSString *(^prefix)(NSString *) = ^(NSString *kmer) {
         NSString *jmer = [kmer substringWithRange:NSMakeRange(0, k-1)];
+        jmer = [jmer stringByAppendingString:@"|"];
         jmer = [jmer stringByAppendingString:[kmer substringWithRange:NSMakeRange(k+1, k-1)]];
         return jmer;
     };
 
     NSString *(^suffix)(NSString *) = ^(NSString *kmer) {
         NSString *jmer = [kmer substringWithRange:NSMakeRange(1, k-1)];
+        jmer = [jmer stringByAppendingString:@"|"];
         jmer = [jmer stringByAppendingString:[kmer substringWithRange:NSMakeRange(k+2, k-1)]];
         return jmer;
     };
