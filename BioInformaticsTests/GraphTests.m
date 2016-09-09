@@ -42,4 +42,19 @@
 
 }
 
+- (void)testCycle {
+/*
+    GraphPath *p = [[GraphPath alloc] initWithString:@"A->B->C"];
+    XCTAssertFalse([p isCycle]);
+    XCTAssertNil([p snipCycle:1]);
+
+    p = [[GraphPath alloc] initWithString:@"A->B->C->A"];
+    XCTAssertTrue([p isCycle]);
+
+    p = [p snipCycle:2];
+    XCTAssertEqualObjects([p stringValue], @"C->A->B");
+ */
+}
+
+
 @end

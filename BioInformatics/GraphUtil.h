@@ -13,4 +13,5 @@
 + (Graph *)overlapGraph:(NSArray *)kmers;
 + (Graph *)debruijnGraph1:(NSString *)str k:(NSUInteger)k;
 + (Graph *)debruijnGraphFromKmers:(NSArray *)kmers;
++ (Graph *)debruijnGraphFromPairedKmers:(NSArray *)kmers k:(NSUInteger)k;
 @end

@@ -6,6 +6,7 @@
 //
 
 #import "BioUtil.h"
+#import "NSArray+CHCollectionUtils.h"
 
 @implementation BioUtil
 
@@ -394,6 +395,55 @@
 
     return [res copy];
 }
+
++ (NSString *)stringFromGappedKmers:(NSArray *)strings k:(NSUInteger)k d:(NSUInteger)d {
+
+    NSArray *s1 = [strings CH_map:^id(id obj) {
+        return [[obj componentsSeparatedByString:@"|"] firstObject];
+    }];
+
+    NSArray *s2 = [strings CH_map:^id(id obj) {
+        return [[obj componentsSeparatedByString:@"|"] lastObject];
+    }];
+
+
+    NSMutableString *res = [NSMutableString string];
+
+    for (NSUInteger i = 0; i < s1.count-1; ++i) {
+        NSString *str = [s1 objectAtIndex:i];
+        [res appendString:[str substringToIndex:1]];
+    }
+    [res appendString:s1.lastObject];
+
+    for (NSUInteger i = strings.count-d-1; i < s2.count-1; ++i) {
+        NSString *str = [s2 objectAtIndex:i];
+        [res appendString:[str substringToIndex:1]];
+    }
+    [res appendString:s2.lastObject];
+
+    return res.copy;
+}
+
++ (NSArray *)binaryDigitsUpTo:(NSUInteger)bits {
+
+    NSUInteger max = pow(2, bits);
+    NSMutableArray *arr = [NSMutableArray array];
+
+    for (NSUInteger i = 0; i < max; ++i) {
+        NSMutableString *str = [[@"0000000000000000000000000000" substringWithRange:NSMakeRange(0, bits)] mutableCopy];
+        NSUInteger j = 0;
+        for (NSUInteger n = i; n > 0; n >>= 1, j++) {
+            if (n & 1) {
+                NSRange r = NSMakeRange(str.length-j-1, 1) ;
+                [str replaceCharactersInRange:r withString:@"1"];
+            }
+        }
+        [arr addObject:[str copy]];
+    }
+
+    return [arr copy];
+}
+
 
 
 @end

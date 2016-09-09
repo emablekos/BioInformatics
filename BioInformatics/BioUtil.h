@@ -26,5 +26,8 @@
 + (NSArray *)frequentWordsWithMismatches:(NSString *)text k:(int)k d:(int)d reverse:(BOOL)reverse;
 + (NSArray *)kmersFromString:(NSString *)str k:(NSUInteger)k;
 + (NSString *)stringFromSequentialKmers:(NSArray *)strings;
++ (NSArray *)binaryDigitsUpTo:(NSUInteger)bits;
++ (NSString *)stringFromGappedKmers:(NSArray *)strings k:(NSUInteger)k d:(NSUInteger)d;
+
 
 @end

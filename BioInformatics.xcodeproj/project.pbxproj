@@ -142,8 +142,8 @@
 				5D8BB6961D68AFBD002C18F6 /* Bio1Week3Tests.m */,
 				5DAD2D201D6E1F1300A6CD9C /* Bio1Week4Tests.m */,
 				5DAD2D221D6E60C900A6CD9C /* ProbabilityProfileTests.m */,
-				5DAD2D261D74FDDF00A6CD9C /* Bio2Week1Tests.m */,
 				5DAD2D2D1D75CD9800A6CD9C /* GraphTests.m */,
+				5DAD2D261D74FDDF00A6CD9C /* Bio2Week1Tests.m */,
 				5D33C42D1D7FA90800C403FD /* Bio2Week2Tests.m */,
 			);
 			path = BioInformaticsTests;

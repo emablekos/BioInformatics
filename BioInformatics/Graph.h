@@ -24,6 +24,8 @@
 - (void)follow:(GraphEdge *)edge to:(GraphNode *)node;
 - (NSEnumerator *)edgeEnumerator;
 - (NSEnumerator *)nodeEnumerator;
+- (BOOL)snipCycle:(GraphEdge *)edge;
+- (NSString *)stringValue;
 @end
 
 @interface Graph : NSObject
@@ -32,6 +34,8 @@
 - (GraphNode *)addNodeForLabel:(NSString *)label;
 - (GraphNode *)addNode:(GraphNode *)node;
 - (GraphEdge *)addEdge:(GraphNode *)from to:(GraphNode *)to;
+- (void)removeEdge:(GraphEdge *)edge;
+- (GraphNode *)nodeForLabel:(NSString *)label;
 - (NSArray *)nodesForLabel:(NSString *)label;
 - (NSArray *)edgesFrom:(GraphNode *)from;
 - (NSArray *)edgesTo:(GraphNode *)to;
@@ -39,14 +43,20 @@
 - (NSString *)adjacencyDescription;
 - (BOOL)node:(GraphNode *)from isAdjacent:(GraphNode *)to;
 
+- (BOOL)isNearlyBalanced;
+- (BOOL)isNearlyBalancedFromStart:(GraphNode * __autoreleasing *)start end:(GraphNode * __autoreleasing *)end;
+
+
 - (NSArray *)hamiltonianPaths:(GraphNode *)from;
 
 @end
 
 
 @interface EulerPathfinder : NSObject
-- (instancetype)initWithGraph:(Graph *)graph node:(GraphNode *)node;
-- (GraphPath *)find;
+@property (nonatomic) GraphNode *start;
+- (instancetype)initWithGraph:(Graph *)graph;
+- (GraphPath *)findCycle;
+- (GraphPath *)findPath;
 @end
 
 

@@ -83,8 +83,8 @@
     NSMutableSet *jmers = [NSMutableSet set];
 
     for (NSString *kmer in kmers) {
-        [jmers addObject:[kmer substringFromIndex:1]];
-        [jmers addObject:[kmer substringToIndex:kmer.length-1]];
+        [jmers addObject:[kmer substringFromIndex:1]]; //suffix
+        [jmers addObject:[kmer substringToIndex:kmer.length-1]]; //prefix
     }
 
     Graph *g = [Graph new];
@@ -106,5 +106,48 @@
 
     return g;
 }
+
+
++ (Graph *)debruijnGraphFromPairedKmers:(NSArray *)kmers k:(NSUInteger)k {
+
+    NSMutableSet *jmers = [NSMutableSet set];
+
+    NSString *(^prefix)(NSString *) = ^(NSString *kmer) {
+        NSString *jmer = [kmer substringWithRange:NSMakeRange(0, k-1)];
+        jmer = [jmer stringByAppendingString:[kmer substringWithRange:NSMakeRange(k+1, k-1)]];
+        return jmer;
+    };
+
+    NSString *(^suffix)(NSString *) = ^(NSString *kmer) {
+        NSString *jmer = [kmer substringWithRange:NSMakeRange(1, k-1)];
+        jmer = [jmer stringByAppendingString:[kmer substringWithRange:NSMakeRange(k+2, k-1)]];
+        return jmer;
+    };
+
+    for (NSString *kmer in kmers) {
+        [jmers addObject:prefix(kmer)];
+        [jmers addObject:suffix(kmer)];
+    }
+
+    Graph *g = [Graph new];
+
+    for (NSString *jmer in jmers) {
+        [g addNodeForLabel:jmer];
+    }
+
+    for (NSString *kmer in kmers) {
+        NSString *pre = prefix(kmer);
+        NSString *suf = suffix(kmer);
+
+        GraphNode *n1 = [[g nodesForLabel:pre] firstObject];
+        GraphNode *n2 = [[g nodesForLabel:suf] firstObject];
+
+        GraphEdge *e = [g addEdge:n1 to:n2];
+        e.label = kmer;
+    }
+    
+    return g;
+}
+
 
 @end
