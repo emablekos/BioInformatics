@@ -131,9 +131,6 @@ TTAC"\
         return obj.label;
     }];
     str = [BioUtil stringFromSequentialKmers:arr];
-
-
-
 }
 
 
@@ -155,7 +152,6 @@ TTAC"\
 
 - (void)testGappedKmers {
 
-
     NSUInteger k = 4;
     NSUInteger d = 2;
 
@@ -170,7 +166,6 @@ GAGC|CGGA"\
     NSString *str = [BioUtil stringFromGappedKmers:strings k:k d:d];
     XCTAssertEqualObjects(str, @"GACCGAGCGCCGGA");
 
-
     NSArray *lines = [[NSString stringWithContentsOfFile:[PROJECT_PATH stringByAppendingPathComponent:@"b2w2_reconstruct_gapped.txt"] encoding:NSUTF8StringEncoding error:nil] componentsSeparatedByString:@"\n"];
 
     NSArray *digits = [[lines firstObject] componentsSeparatedByString:@" "];
@@ -179,8 +174,6 @@ GAGC|CGGA"\
     strings = [lines subarrayWithRange:NSMakeRange(1, lines.count-2)];
 
     str = [BioUtil stringFromGappedKmers:strings k:k d:d];
-
-
 }
 
 
@@ -205,9 +198,74 @@ GAGC|CGGA"\
 
     NSString *str = [BioUtil stringFromGappedKmers:labels k:k d:d];
     XCTAssertEqualObjects(str, test);
+}
+
+
+- (void)testContigs {
+
+
+    NSArray *kmers = [@"\
+ATG,\
+ATG,\
+TGT,\
+TGG,\
+CAT,\
+GGA,\
+GAT,\
+AGA"
+                      componentsSeparatedByString:@","];
+
+
+    NSArray *test = [@"\
+AGA,\
+ATG,\
+ATG,\
+CAT,\
+GAT,\
+TGGA,\
+TGT"
+                     componentsSeparatedByString:@","];
+
+
+    Graph *g = [GraphUtil debruijnGraphFromKmers:kmers];
+    MaximalNonBranchingPathsFinder *pf = [[MaximalNonBranchingPathsFinder alloc] initWithGraph:g];
+    NSArray *ps = [pf search];
+
+    NSArray *contigs = [ps CH_map:^id(GraphPath *obj) {
+        NSArray *l = [obj.edgeEnumerator.allObjects CH_map:^id(GraphEdge *obj) {
+            return obj.label;
+        }];
+        return [BioUtil stringFromSequentialKmers:l];
+    }];
+    
+    XCTAssertEqualObjects([NSSet setWithArray:contigs], [NSSet setWithArray:test]);
+
+
+
+    NSArray *lines = [[NSString stringWithContentsOfFile:[PROJECT_PATH stringByAppendingPathComponent:@"b2w2_contigs.txt"] encoding:NSUTF8StringEncoding error:nil] componentsSeparatedByString:@"\n"];
+    kmers = [lines subarrayWithRange:NSMakeRange(0, lines.count-1)];
+    g = [GraphUtil debruijnGraphFromKmers:kmers];
+    pf = [[MaximalNonBranchingPathsFinder alloc] initWithGraph:g];
+    ps = [pf search];
+
+    contigs = [ps CH_map:^id(GraphPath *obj) {
+        NSArray *l = [obj.edgeEnumerator.allObjects CH_map:^id(GraphEdge *obj) {
+            return obj.label;
+        }];
+        return [BioUtil stringFromSequentialKmers:l];
+    }];
+
 
 
 }
+
+
+- (void)testQuiz1 {
+
+    
+
+}
+
 
 
 @end

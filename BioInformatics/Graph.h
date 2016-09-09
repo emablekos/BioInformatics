@@ -60,3 +60,8 @@
 @end
 
 
+@interface MaximalNonBranchingPathsFinder : NSObject
+- (NSArray *)search;
+- (instancetype)initWithGraph:(Graph *)g;
+@end
+

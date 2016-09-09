@@ -36,7 +36,16 @@
 @implementation GraphEdge
 
 - (NSString *)description {
-    return [[super description] stringByAppendingFormat:@" %@->%@", self.from.label, self.to.label];
+    return [[super description] stringByAppendingFormat:@" %@", [self stringValue]];
+}
+
+- (NSString *)stringValue {
+    NSMutableString *str = [NSMutableString string];
+    [str appendFormat:@" %@->%@", self.from.label, self.to.label];
+    if (self.label) {
+        [str appendFormat:@" (%@)", self.label];
+    }
+    return [str copy];
 }
 
 @end
@@ -461,7 +470,6 @@
 
 @interface EulerPathfinder()
 @property (nonatomic) Graph *graph;
-@property (nonatomic) BOOL shouldFindCycle;
 @end
 
 @implementation EulerPathfinder
@@ -480,8 +488,6 @@
         NSAssert(NO, @"Graph not balanced");
         return nil;
     }
-
-    self.shouldFindCycle = YES;
 
     GraphNode *start = self.start ?: self.graph.nodeEnumerator.nextObject;
 
@@ -571,3 +577,59 @@
 
 
 @end
+
+
+
+
+@interface MaximalNonBranchingPathsFinder()
+@property (nonatomic) Graph *graph;
+@property (nonatomic) NSMutableArray *visitedEdges;
+@property (nonatomic) NSMutableArray *paths;
+@end
+
+@implementation MaximalNonBranchingPathsFinder
+- (instancetype)initWithGraph:(Graph *)g {
+    self = [super init];
+    if (self) {
+        self.graph = g;
+    }
+    return self;
+}
+
+- (NSArray *)search {
+    self.visitedEdges = [NSMutableArray array];
+    self.paths = [NSMutableArray array];
+
+    for (GraphNode *n in self.graph.nodes) {
+        NSArray *from = [self.graph edgesFrom:n];
+        NSArray *to = [self.graph edgesTo:n];
+
+        if (to.count == from.count && from.count == 1) {
+            continue;
+        }
+
+        for (GraphEdge *e in from) {
+            GraphPath *p = [GraphPath new];
+            [p startAt:n];
+            [p follow:e to:e.to];
+            [self dfs:p];
+            [self.paths addObject:p];
+        }
+    }
+
+    return [self.paths copy];
+}
+
+- (void)dfs:(GraphPath *)path {
+    NSArray *from = [self.graph edgesFrom:[path.nodes lastObject]];
+    NSArray *to = [self.graph edgesTo:[path.nodes lastObject]];
+    if (from.count == 1 && to.count == 1) {
+        GraphEdge *e = from.firstObject;
+        [path follow:e to:[e to]];
+        [self dfs:path];
+    }
+}
+
+@end
+
+
