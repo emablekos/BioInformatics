@@ -28,6 +28,7 @@
 + (NSString *)stringFromSequentialKmers:(NSArray *)strings;
 + (NSArray *)binaryDigitsUpTo:(NSUInteger)bits;
 + (NSString *)stringFromGappedKmers:(NSArray *)strings k:(NSUInteger)k d:(NSUInteger)d;
-
++ (NSString *)dnaToRNA:(NSString *)original;
++ (NSString *)rnaToDNA:(NSString *)original;
 
 @end

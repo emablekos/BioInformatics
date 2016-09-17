@@ -73,6 +73,36 @@
     return [res copy];
 }
 
++ (NSString *)dnaToRNA:(NSString *)original {
+
+    NSMutableString *res = [NSMutableString stringWithCapacity:original.length];
+
+    const char *g = [original UTF8String];
+
+    for (long long i = 0; i < original.length; ++i) {
+        char c = g[i];
+
+        if (c == 'C') {
+            [res appendString:@"C"];
+        } else if (c == 'G') {
+            [res appendString:@"G"];
+        } else if (c == 'T') {
+            [res appendString:@"U"];
+        } else if (c == 'A') {
+            [res appendString:@"A"];
+        }
+    }
+
+    return [res copy];
+}
+
++ (NSString *)rnaToDNA:(NSString *)original {
+    NSMutableString *res = [original mutableCopy];
+    [res replaceOccurrencesOfString:@"U" withString:@"T" options:0 range:NSMakeRange(0, original.length)];
+    return [res copy];
+}
+
+
 + (NSArray *)locsOfPattern:(NSString *)pattern genome:(NSString *)genome {
     NSMutableArray *res = [NSMutableArray array];
 

@@ -19,6 +19,13 @@
 		5D8BB6971D68AFBD002C18F6 /* Bio1Week3Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D8BB6961D68AFBD002C18F6 /* Bio1Week3Tests.m */; };
 		5D8BB69A1D68AFE2002C18F6 /* Motif.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D8BB6991D68AFE2002C18F6 /* Motif.m */; };
 		5D8BB69B1D68B987002C18F6 /* Motif.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D8BB6991D68AFE2002C18F6 /* Motif.m */; };
+		5D9E9D681D8C990B00847B77 /* RNA_codon_table.txt in Resources */ = {isa = PBXBuildFile; fileRef = 5D9E9D671D8C990B00847B77 /* RNA_codon_table.txt */; };
+		5D9E9D6B1D8C992800847B77 /* RNAMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D9E9D6A1D8C992800847B77 /* RNAMapper.m */; };
+		5D9E9D6C1D8C992800847B77 /* RNAMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D9E9D6A1D8C992800847B77 /* RNAMapper.m */; };
+		5D9E9D6E1D8C9A1B00847B77 /* Bio2Week3Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D9E9D6D1D8C9A1B00847B77 /* Bio2Week3Tests.m */; };
+		5D9E9D711D8D061300847B77 /* Spectrometer.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D9E9D701D8D061300847B77 /* Spectrometer.m */; };
+		5D9E9D721D8D061300847B77 /* Spectrometer.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D9E9D701D8D061300847B77 /* Spectrometer.m */; };
+		5D9E9D741D8DEAF800847B77 /* Bio2Week4Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D9E9D731D8DEAF800847B77 /* Bio2Week4Tests.m */; };
 		5DAB7DD71D69E0EC00B703E4 /* NSArray+CHCollectionUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D49C5431D68EEDA001313B6 /* NSArray+CHCollectionUtils.m */; };
 		5DAB7DD81D69E0F000B703E4 /* NSArray+CHSafeAccess.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D49C5451D68EEDA001313B6 /* NSArray+CHSafeAccess.m */; };
 		5DAD2D211D6E1F1300A6CD9C /* Bio1Week4Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DAD2D201D6E1F1300A6CD9C /* Bio1Week4Tests.m */; };
@@ -63,6 +70,13 @@
 		5D8BB6961D68AFBD002C18F6 /* Bio1Week3Tests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Bio1Week3Tests.m; sourceTree = "<group>"; };
 		5D8BB6981D68AFE2002C18F6 /* Motif.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Motif.h; sourceTree = "<group>"; };
 		5D8BB6991D68AFE2002C18F6 /* Motif.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Motif.m; sourceTree = "<group>"; };
+		5D9E9D671D8C990B00847B77 /* RNA_codon_table.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = RNA_codon_table.txt; sourceTree = "<group>"; };
+		5D9E9D691D8C992800847B77 /* RNAMapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RNAMapper.h; sourceTree = "<group>"; };
+		5D9E9D6A1D8C992800847B77 /* RNAMapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RNAMapper.m; sourceTree = "<group>"; };
+		5D9E9D6D1D8C9A1B00847B77 /* Bio2Week3Tests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Bio2Week3Tests.m; sourceTree = "<group>"; };
+		5D9E9D6F1D8D061300847B77 /* Spectrometer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Spectrometer.h; sourceTree = "<group>"; };
+		5D9E9D701D8D061300847B77 /* Spectrometer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Spectrometer.m; sourceTree = "<group>"; };
+		5D9E9D731D8DEAF800847B77 /* Bio2Week4Tests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Bio2Week4Tests.m; sourceTree = "<group>"; };
 		5DAD2D201D6E1F1300A6CD9C /* Bio1Week4Tests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Bio1Week4Tests.m; sourceTree = "<group>"; };
 		5DAD2D221D6E60C900A6CD9C /* ProbabilityProfileTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProbabilityProfileTests.m; sourceTree = "<group>"; };
 		5DAD2D241D74FD1100A6CD9C /* input */ = {isa = PBXFileReference; lastKnownFileType = folder; path = input; sourceTree = "<group>"; };
@@ -113,6 +127,7 @@
 		5D8BB6741D60C0AA002C18F6 /* BioInformatics */ = {
 			isa = PBXGroup;
 			children = (
+				5D9E9D671D8C990B00847B77 /* RNA_codon_table.txt */,
 				5D8BB6911D60C290002C18F6 /* BioUtil.m */,
 				5D8BB6921D60C290002C18F6 /* BioUtil.h */,
 				5D8BB6751D60C0AA002C18F6 /* main.m */,
@@ -128,6 +143,10 @@
 				5DAD2D291D75C73800A6CD9C /* Graph.m */,
 				5DAD2D301D75D47900A6CD9C /* GraphUtil.h */,
 				5DAD2D311D75D47900A6CD9C /* GraphUtil.m */,
+				5D9E9D691D8C992800847B77 /* RNAMapper.h */,
+				5D9E9D6A1D8C992800847B77 /* RNAMapper.m */,
+				5D9E9D6F1D8D061300847B77 /* Spectrometer.h */,
+				5D9E9D701D8D061300847B77 /* Spectrometer.m */,
 			);
 			path = BioInformatics;
 			sourceTree = "<group>";
@@ -145,6 +164,8 @@
 				5DAD2D2D1D75CD9800A6CD9C /* GraphTests.m */,
 				5DAD2D261D74FDDF00A6CD9C /* Bio2Week1Tests.m */,
 				5D33C42D1D7FA90800C403FD /* Bio2Week2Tests.m */,
+				5D9E9D6D1D8C9A1B00847B77 /* Bio2Week3Tests.m */,
+				5D9E9D731D8DEAF800847B77 /* Bio2Week4Tests.m */,
 			);
 			path = BioInformaticsTests;
 			sourceTree = "<group>";
@@ -227,6 +248,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5DAD2D251D74FD1100A6CD9C /* input in Resources */,
+				5D9E9D681D8C990B00847B77 /* RNA_codon_table.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -243,7 +265,9 @@
 				5D8BB6931D60C290002C18F6 /* BioUtil.m in Sources */,
 				5D49C5471D68EEDA001313B6 /* NSArray+CHSafeAccess.m in Sources */,
 				5DAD2D2A1D75C73800A6CD9C /* Graph.m in Sources */,
+				5D9E9D711D8D061300847B77 /* Spectrometer.m in Sources */,
 				5DAD2D321D75D47900A6CD9C /* GraphUtil.m in Sources */,
+				5D9E9D6B1D8C992800847B77 /* RNAMapper.m in Sources */,
 				5D8BB6761D60C0AA002C18F6 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -252,6 +276,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5D9E9D741D8DEAF800847B77 /* Bio2Week4Tests.m in Sources */,
 				5D33C42E1D7FA90800C403FD /* Bio2Week2Tests.m in Sources */,
 				5DAD2D2F1D75CFFB00A6CD9C /* Graph.m in Sources */,
 				5D8BB6971D68AFBD002C18F6 /* Bio1Week3Tests.m in Sources */,
@@ -259,9 +284,12 @@
 				5DAD2D331D75D47900A6CD9C /* GraphUtil.m in Sources */,
 				5DAD2D211D6E1F1300A6CD9C /* Bio1Week4Tests.m in Sources */,
 				5D8BB69B1D68B987002C18F6 /* Motif.m in Sources */,
+				5D9E9D721D8D061300847B77 /* Spectrometer.m in Sources */,
 				5D8BB6951D60C2AD002C18F6 /* BioUtil.m in Sources */,
 				5D49C5411D68E36A001313B6 /* ProbabilityProfile.m in Sources */,
+				5D9E9D6E1D8C9A1B00847B77 /* Bio2Week3Tests.m in Sources */,
 				5DAB7DD81D69E0F000B703E4 /* NSArray+CHSafeAccess.m in Sources */,
+				5D9E9D6C1D8C992800847B77 /* RNAMapper.m in Sources */,
 				5DAD2D231D6E60C900A6CD9C /* ProbabilityProfileTests.m in Sources */,
 				5DAD2D2E1D75CD9800A6CD9C /* GraphTests.m in Sources */,
 				5D8BB6831D60C103002C18F6 /* Bio1Week2Tests.m in Sources */,
