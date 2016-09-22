@@ -12,4 +12,5 @@
 - (NSArray *)linearSpectrum:(NSString *)peptide;
 - (NSArray *)cyclicSpectrum:(NSString *)peptide;
 - (NSArray *)cyclopeptideSequencing:(NSString *)testSpectrum;
+- (NSArray *)weightsForProtein:(NSString *)protein;
 @end

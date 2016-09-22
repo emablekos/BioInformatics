@@ -72,6 +72,17 @@ W 186\
     return [pro copy];
 }
 
+- (NSArray *)weightsForProtein:(NSString *)protein {
+    NSMutableArray *wts = [NSMutableArray array];
+    for (int i = 0; i < protein.length; ++i) {
+        NSString *a = [protein substringWithRange:NSMakeRange(i, 1)];
+        NSNumber *wt = [self.proteinToWeight objectForKey:a];
+        [wts addObject:wt];
+    }
+
+    return [wts copy];
+}
+
 - (NSArray *)linearSpectrum:(NSString *)peptide {
 
     NSMutableArray *prefixMass = [NSMutableArray array];
