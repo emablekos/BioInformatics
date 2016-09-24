@@ -37,6 +37,8 @@
 		5DAD2D2F1D75CFFB00A6CD9C /* Graph.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DAD2D291D75C73800A6CD9C /* Graph.m */; };
 		5DAD2D321D75D47900A6CD9C /* GraphUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DAD2D311D75D47900A6CD9C /* GraphUtil.m */; };
 		5DAD2D331D75D47900A6CD9C /* GraphUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DAD2D311D75D47900A6CD9C /* GraphUtil.m */; };
+		5DEDC6A11D96221500D52A10 /* SpectrumConvolution.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DEDC6A01D96221500D52A10 /* SpectrumConvolution.m */; };
+		5DEDC6A21D96221500D52A10 /* SpectrumConvolution.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DEDC6A01D96221500D52A10 /* SpectrumConvolution.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -86,6 +88,8 @@
 		5DAD2D2D1D75CD9800A6CD9C /* GraphTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GraphTests.m; sourceTree = "<group>"; };
 		5DAD2D301D75D47900A6CD9C /* GraphUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GraphUtil.h; sourceTree = "<group>"; };
 		5DAD2D311D75D47900A6CD9C /* GraphUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GraphUtil.m; sourceTree = "<group>"; };
+		5DEDC69F1D96221500D52A10 /* SpectrumConvolution.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpectrumConvolution.h; sourceTree = "<group>"; };
+		5DEDC6A01D96221500D52A10 /* SpectrumConvolution.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpectrumConvolution.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,6 +151,8 @@
 				5D9E9D6A1D8C992800847B77 /* RNAMapper.m */,
 				5D9E9D6F1D8D061300847B77 /* Spectrometer.h */,
 				5D9E9D701D8D061300847B77 /* Spectrometer.m */,
+				5DEDC69F1D96221500D52A10 /* SpectrumConvolution.h */,
+				5DEDC6A01D96221500D52A10 /* SpectrumConvolution.m */,
 			);
 			path = BioInformatics;
 			sourceTree = "<group>";
@@ -264,6 +270,7 @@
 				5D49C5401D68E025001313B6 /* ProbabilityProfile.m in Sources */,
 				5D8BB6931D60C290002C18F6 /* BioUtil.m in Sources */,
 				5D49C5471D68EEDA001313B6 /* NSArray+CHSafeAccess.m in Sources */,
+				5DEDC6A11D96221500D52A10 /* SpectrumConvolution.m in Sources */,
 				5DAD2D2A1D75C73800A6CD9C /* Graph.m in Sources */,
 				5D9E9D711D8D061300847B77 /* Spectrometer.m in Sources */,
 				5DAD2D321D75D47900A6CD9C /* GraphUtil.m in Sources */,
@@ -292,6 +299,7 @@
 				5D9E9D6C1D8C992800847B77 /* RNAMapper.m in Sources */,
 				5DAD2D231D6E60C900A6CD9C /* ProbabilityProfileTests.m in Sources */,
 				5DAD2D2E1D75CD9800A6CD9C /* GraphTests.m in Sources */,
+				5DEDC6A21D96221500D52A10 /* SpectrumConvolution.m in Sources */,
 				5D8BB6831D60C103002C18F6 /* Bio1Week2Tests.m in Sources */,
 				5DAD2D271D74FDDF00A6CD9C /* Bio2Week1Tests.m in Sources */,
 			);
